@@ -10,18 +10,16 @@ window.onload = () =>{
 }
 
 function check(){
-    if(onlyRunOnce === true){
+    if(onlyRunOnce === true) {
         onlyRunOnce = false;
         start();
-    }else{
-        return false;
     }
 }
 
 function start(){
     if(Break === false){
-        seconds = 60;
-        minutes = 24;
+        seconds = 5;
+        minutes = 0;
     }else if(Break === true){
         seconds = 60;
         minutes = 4;
