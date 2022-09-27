@@ -1,5 +1,5 @@
-# pomodoro
-# Pomodoro timer, made in Javascript
+#  Pomodoro Timer
+## made in Javascript
 
 Work for 25 minutes, take a 5-minute break.
 
