@@ -3,6 +3,7 @@ let seconds = 0;
 let myInterval;
 let Break = false;
 let onlyRunOnce = true;
+let numBreak = 0;
 
 window.onload = () =>{
     document.getElementById('minutes').innerHTML = minutes;
@@ -20,9 +21,14 @@ function start(){
     if(Break === false){
         seconds = 5;
         minutes = 0;
-    }else if(Break === true){
+    }else if(Break === true && numBreak === 4){
         seconds = 60;
-        minutes = 4;
+        minutes = 14;
+        numBreak = 0;
+    }else if(Break === true){
+        seconds = 10;
+        minutes = 0;
+        numBreak++;
     }
 
     let timerFunction = () => {
