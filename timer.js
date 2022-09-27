@@ -3,7 +3,7 @@ let seconds = 0;
 let myInterval;
 let Break = false;
 let onlyRunOnce = true;
-let numBreak = 0;
+let numBreak = 1;
 
 window.onload = () =>{
     document.getElementById('minutes').innerHTML = minutes;
