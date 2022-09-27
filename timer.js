@@ -19,15 +19,15 @@ function check(){
 
 function start(){
     if(Break === false){
-        seconds = 5;
-        minutes = 0;
+        seconds = 60;
+        minutes = 24;
     }else if(Break === true && numBreak === 4){
         seconds = 60;
         minutes = 14;
         numBreak = 0;
     }else if(Break === true){
-        seconds = 10;
-        minutes = 0;
+        seconds = 60;
+        minutes = 4;
         numBreak++;
     }
 
