@@ -1,3 +1,27 @@
-section{
+html, body{
     background-color: darkslateblue;
+}
+
+div{
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section{
+    display: block;
+    height:100%;
+    width:100%;
+    padding: 60px 60px 60px 120px;
+    box-sizing:border-box;
+}
+
+span{
+    font-size: 10rem;
+}
+
+button{
+    width: 15%;
+    height: 65px;
+    background-color: #554c88;
 }
