@@ -16,7 +16,7 @@ section{
     box-sizing:border-box;
 }
 
-span{
+span:not(#placeholder){
     font-size: 8rem;
 }
 
@@ -38,4 +38,42 @@ div.credit{
 
 #heart{
     height: 17px;
+}
+
+.custom-field {
+    font-size: 14px;
+    position: relative;
+    border-top: 20px solid transparent;
+}
+
+.custom-field input:focus + .placeholder {
+    top: -10px;
+    font-size: 10px;
+    color: #222;
+    transition:
+            top 0.3s ease,
+            color 0.3s ease,
+            font-size 0.3s ease;
+}
+
+.custom-field input{
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #e7a2a2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.custom-field input:focus + .placeholder {
+    top: -10px;
+    font-size: 10px;
+    color: #222;
+}
+
+#addTask{
+    height: 30px;
 }
