@@ -11,10 +11,21 @@
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
         <link rel="stylesheet" href="style.css">
     </head>
+
+    <script>
+        const task = document.getElementById('taskInput');
+
+        task.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                setItem(task);
+            }
+        });
+    </script>
+
     <body>
         <section>
             <div class="tomato">
-                <img src="/images/Tomato.png" id="tomatoImg">
+                <img src="/images/Tomato.png" id="tomatoImg" alt="tomato">
             </div>
             <div class="timer">
                 <span id="minutes"></span>
@@ -25,9 +36,17 @@
                 <button onclick="check();">Start</button>
                 <button onclick="stop();">Stop</button>
             </div>
+            <br>
+            <div class="to-do">
+                <label class="custom-field">
+                    <input type="text" id="taskInput"/>
+                    <span class="placeholder" id="placeholder">Add a new Task</span>
+                </label>
+            </div>
         </section>
+        <br>
         <div id="credit">
-            <p>Made with <img src="images/heart.png" id="heart"> by <a href="https://www.github.com/natanschneider">Natan Schneider</a>.</p>
+            <p>Made with <img src="images/heart.png" id="heart" alt="heart"> by <a href="https://www.github.com/natanschneider">Natan Schneider</a>.</p>
         </div>
     </body>
 </html>
