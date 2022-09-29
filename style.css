@@ -29,3 +29,13 @@ button{
 img{
     height: 210px;
 }
+
+div.credit{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#heart{
+    height: 17px;
+}
