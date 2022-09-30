@@ -21,7 +21,7 @@ span{
     font-size: 8rem;
 }
 
-button{
+button:not(#deleteTask){
     width: 15%;
     height: 65px;
     background-color: #a94b47;
