@@ -12,41 +12,37 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <script>
-        const task = document.getElementById('taskInput');
-
-        task.addEventListener("keyup", function(event) {
-            if (event.key === "Enter") {
-                setItem(task);
-            }
-        });
-    </script>
-
     <body>
-        <section>
-            <div class="tomato">
-                <img src="/images/Tomato.png" id="tomatoImg" alt="tomato">
-            </div>
-            <div class="timer">
-                <span id="minutes"></span>
-                <span>:</span>
-                <span id="seconds"></span>
-            </div>
-            <div class="buttons">
-                <button onclick="check();">Start</button>
-                <button onclick="stop();">Stop</button>
-            </div>
-            <br>
-            <div class="to-do">
-                <label class="custom-field">
-                    <input type="text" id="taskInput"/>
-                    <span class="placeholder" id="placeholder">Add a new Task</span>
-                </label>
-            </div>
-        </section>
+        <div class="tomato">
+            <img src="/images/Tomato.png" id="tomatoImg" alt="tomato">
+        </div>
+        <div class="timer">
+            <span id="minutes"></span>
+            <span>:</span>
+            <span id="seconds"></span>
+        </div>
+        <div class="buttons">
+            <button onclick="check();">Start</button>
+            <button onclick="stop();">Stop</button>
+        </div>
         <br>
+        <div class="to-do">
+            <label class="custom-field">
+                <input type="text" id="taskInput" placeholder="Add a task"/>
+            </label>
+        </div>
         <div id="credit">
             <p>Made with <img src="images/heart.png" id="heart" alt="heart"> by <a href="https://www.github.com/natanschneider">Natan Schneider</a>.</p>
         </div>
     </body>
+
+    <script>
+        const inputElement = document.getElementById('taskInput');
+        inputElement.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                const task = document.getElementById('taskInput').value;
+                setItem(task);
+            }
+        });
+    </script>
 </html>
