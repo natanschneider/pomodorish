@@ -27,7 +27,7 @@ function getItem(key){
 
     let deleteBtn = document.createElement('button');
     deleteBtn.id = 'deleteTask';
-    deleteBtn.innerHTML = '<img src="images/cancel.png"  alt="" style="height: 10px"/>'
+    deleteBtn.innerHTML = '<img src="images/cancel.png"  alt="" id="deleteImg"/>';
     deleteBtn.onclick = function(){
         deleteItem(key);
     };
