@@ -1,5 +1,14 @@
 html, body{
     background-color: #B03631;
+    min-height: 100%;
+}
+
+#credit{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 div{
@@ -8,15 +17,7 @@ div{
     text-align: center;
 }
 
-section{
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 60px 60px 60px 120px;
-    box-sizing:border-box;
-}
-
-span:not(#placeholder){
+span{
     font-size: 8rem;
 }
 
@@ -30,50 +31,13 @@ img{
     height: 210px;
 }
 
-div.credit{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 #heart{
     height: 17px;
 }
 
-.custom-field {
-    font-size: 14px;
-    position: relative;
-    border-top: 20px solid transparent;
-}
-
-.custom-field input:focus + .placeholder {
-    top: -10px;
-    font-size: 10px;
-    color: #222;
-    transition:
-            top 0.3s ease,
-            color 0.3s ease,
-            font-size 0.3s ease;
-}
-
-.custom-field input{
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #e7a2a2;
-    padding: 12px;
-    border-radius: 3px;
-    width: 250px;
-    font-size: 14px;
-}
-
-.custom-field input:focus + .placeholder {
-    top: -10px;
-    font-size: 10px;
-    color: #222;
-}
-
-#addTask{
-    height: 30px;
+input{
+    width: 30%;
+    height: 40px;
+    border-radius: 11px;
+    background-color: #c46560;
 }
