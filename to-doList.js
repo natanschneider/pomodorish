@@ -1,9 +1,17 @@
-function setItem(value){
-    let key = 1;
+let num;
+let storageLength = localStorage.length;
 
+if(storageLength !== 0){
+    num = storageLength;
+}else{
+    num = 1;
+}
+
+function setItem(value){
+    let key = num;
     localStorage.setItem(key.toString(), value);
     getItem(key);
-    key++;
+    num++;
 }
 
 function getItem(key){
@@ -24,6 +32,14 @@ function deleteItem(key){
     localStorage.removeItem(key);
 }
 
-function editItem(){
-
+function listItems(){
+    let i;
+    let numberOfItems = localStorage.length;
+    if(numberOfItems >= 1) {
+        for (i = 1; i <= numberOfItems; i++) {
+            getItem(i);
+        }
+    }else{
+        return false;
+    }
 }
