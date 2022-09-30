@@ -8,6 +8,8 @@ let numBreak = 1;
 window.onload = () =>{
     document.getElementById('minutes').innerHTML = minutes;
     document.getElementById('seconds').innerHTML = seconds;
+
+    listItems();
 }
 
 function check(){
