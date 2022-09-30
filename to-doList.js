@@ -19,17 +19,29 @@ function getItem(key){
 
     let div = document.createElement('div');
 
-    div.id = 'taskItem';
+    div.class = 'taskItem';
+    div.id = key;
 
     let h4 = document.createElement('h4');
     h4.textContent = item;
-    div.appendChild(h4);
 
+    let deleteBtn = document.createElement('button');
+    deleteBtn.id = 'deleteTask';
+    deleteBtn.innerHTML = 'Delete';
+    deleteBtn.onclick = function(){
+        deleteItem(key);
+    };
+
+    div.appendChild(h4);
+    div.appendChild(deleteBtn);
     document.body.appendChild(div);
 }
 
 function deleteItem(key){
     localStorage.removeItem(key);
+
+    let div = document.getElementById(key);
+    div.remove();
 }
 
 function listItems(){
