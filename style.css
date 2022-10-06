@@ -4,7 +4,7 @@ html, body{
 }
 
 #credit{
-    position: absolute;
+    position: relative;
     bottom: 0;
     text-align: center;
     left: 50%;
@@ -54,4 +54,9 @@ input{
     width: 5%;
     height: 40px;
     background-color: #a94b47;
+}
+
+.dynamicButton{
+    height: 20px;
+    background-color: #c46560;
 }
