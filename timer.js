@@ -6,11 +6,12 @@ let onlyRunOnce = true;
 let stopBtn = false;
 let numBreak = 1;
 
-window.onload = () =>{
+window.onload = async () =>{
 	document.getElementById('minutes').innerHTML = minutes;
 	document.getElementById('seconds').innerHTML = seconds;
 	
 	listItems();
+	let permission = await Notification.requestPermission();
 }
 
 function check(){
