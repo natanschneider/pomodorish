@@ -41,3 +41,7 @@ input{
     border-radius: 11px;
     background-color: #c46560;
 }
+
+#deleteImg{
+    height: 15px;
+}
