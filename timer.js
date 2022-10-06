@@ -5,13 +5,14 @@ let Break = false;
 let onlyRunOnce = true;
 let stopBtn = false;
 let numBreak = 1;
+const sound = '/sounds/notificationSound.wav';
 
 window.onload = async () =>{
 	document.getElementById('minutes').innerHTML = minutes;
 	document.getElementById('seconds').innerHTML = seconds;
 	
 	listItems();
-	let permission = await Notification.requestPermission();
+	await Notification.requestPermission();
 }
 
 function check(){
@@ -53,11 +54,13 @@ function start(){
 				Break = false;
 				minutes = 25;
 				seconds = 0;
-				new Notification('Time to get back to work!');
+				new Audio(sound).play();
+				new Notification('Time to get back to work!');			
 			}else if(Break === false){
 				Break = true;
 				minutes = 5;
 				seconds = 0;
+				new Audio(sound).play();
 				new Notification('You deserve a break now!');
 			}
 		}
@@ -66,7 +69,7 @@ function start(){
 	}
 	myInterval = setInterval(timerFunction, 1000);
 }
-
+ 
 function stop(){
 	clearInterval(myInterval);
 	onlyRunOnce = true;
