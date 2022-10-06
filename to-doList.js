@@ -1,17 +1,10 @@
-let num;
+let lastKey = 0;
 let storageLength = localStorage.length;
 
-if(storageLength !== 0){
-	num = storageLength;
-}else{
-	num = 1;
-}
-
 function setItem(value){
-	let key = num;
-	localStorage.setItem(key.toString(), value);
-	getItem(key);
-	num++;
+	lastKey++;
+	localStorage.setItem(lastKey.toString(), value);
+	getItem(lastKey);
 }
 
 function getItem(key){
@@ -50,6 +43,9 @@ function listItems(){
 	if(storageLength !== 0){
 		for(let key of keys){
 	  		getItem(key);
+			if(key > lastKey){
+				lastKey = key;
+			}
 		}
 	}else{
 		return false;
