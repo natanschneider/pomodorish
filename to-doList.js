@@ -31,10 +31,10 @@ function getItem(key){
 	deleteBtn.onclick = function(){
 		deleteItem(key);
 	};
-	
+
+	h4.appendChild(deleteBtn);
 	div.appendChild(h4);
-	div.appendChild(deleteBtn);
-	document.body.appendChild(div);
+	document.getElementById('tasks').appendChild(div);
 }
 
 function deleteItem(key){
@@ -45,11 +45,11 @@ function deleteItem(key){
 }
 
 function listItems(){
-	let i;
-	let numberOfItems = localStorage.length;
-	if(numberOfItems >= 1) {
-		for (i = 1; i <= numberOfItems; i++) {
-			getItem(i);
+	let keys = Object.keys(localStorage);
+
+	if(storageLength !== 0){
+		for(let key of keys){
+	  		getItem(key);
 		}
 	}else{
 		return false;
