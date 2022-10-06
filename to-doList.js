@@ -51,3 +51,9 @@ function listItems(){
 		return false;
 	}
 }
+
+function clearItems(){
+	localStorage.clear();
+	let div = document.getElementById('tasks');
+	div.innerHTML = '';
+}
