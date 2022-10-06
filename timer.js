@@ -3,6 +3,7 @@ let seconds = 0;
 let myInterval;
 let Break = false;
 let onlyRunOnce = true;
+let stopBtn = false;
 let numBreak = 1;
 
 window.onload = () =>{
@@ -20,14 +21,18 @@ function check(){
 }
 
 function start(){
-	if(Break === false){
+	if(stopBtn === true){
+		minutes = document.getElementById('minutes').innerHTML;
+		seconds = document.getElementById('seconds').innerHTML;
+		stopBtn = false;
+	}else if(Break === false && stopBtn === false){
 		seconds = 60;
 		minutes = 24;
-	}else if(Break === true && numBreak === 4){
+	}else if(Break === true && numBreak === 4 && stopBtn === false){
 		seconds = 60;
 		minutes = 14;
 		numBreak = 0;
-	}else if(Break === true){
+	}else if(Break === true && stopBtn === false){
 		seconds = 60;
 		minutes = 4;
 		numBreak++;
@@ -65,3 +70,12 @@ function stop(){
 	clearInterval(myInterval);
 	onlyRunOnce = true;
 }
+
+function stopButton(){
+	clearInterval(myInterval);
+	onlyRunOnce = true;
+	stopBtn = true;
+}
+
+// The diference between the function stop and stopButton is: the stop function is meant to be called by another function, stopButton is meant to be called by the user
+// When start function is called if stopButton was called the clock keeps going from where is stopped, and if stop was called, it checks which pomodoro cycle the user is and starts from there.
