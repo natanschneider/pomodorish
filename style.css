@@ -1,5 +1,14 @@
 html, body{
     background-color: #B03631;
+    min-height: 100%;
+}
+
+#credit{
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 div{
@@ -8,19 +17,11 @@ div{
     text-align: center;
 }
 
-section{
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 60px 60px 60px 120px;
-    box-sizing:border-box;
-}
-
 span{
     font-size: 8rem;
 }
 
-button{
+button:not(#deleteTask, #clearItems, #checkTask){
     width: 15%;
     height: 65px;
     background-color: #a94b47;
@@ -30,12 +31,32 @@ img{
     height: 210px;
 }
 
-div.credit{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 #heart{
     height: 17px;
+}
+
+input{
+    width: 30%;
+    height: 40px;
+    border-radius: 11px;
+    background-color: #c46560;
+}
+
+#deleteImg{
+    height: 15px;
+}
+
+#checkImg{
+    height: 15px;
+}
+
+#clearItems{
+    width: 5%;
+    height: 40px;
+    background-color: #a94b47;
+}
+
+.dynamicButton{
+    height: 20px;
+    background-color: #c46560;
 }

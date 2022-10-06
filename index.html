@@ -5,28 +5,51 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Pomodoro Timer</title>
+        <title>Pomodorish</title>
         <script type="text/javascript" src="timer.js"></script>
+        <script type="text/javascript" src="to-doList.js"></script>
         <link rel="icon" type="image/x-icon" href="/images/favicon.png">
         <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
-        <section>
-            <div class="tomato">
-                <img src="/images/Tomato.png" id="tomatoImg">
+        <div class="tomato">
+            <img src="/images/Tomato.png" id="tomatoImg" alt="tomato">
+        </div>
+        <div class="timer">
+            <span id="minutes"></span>
+            <span>:</span>
+            <span id="seconds"></span>
+        </div>
+        <div class="buttons">
+            <button onclick="check();">Start</button>
+            <button onclick="stopButton();">Stop</button>
+        </div>
+        <br>
+        <div class="to-do">
+            <label class="custom-field">
+                <input type="text" id="taskInput" placeholder="Add a task"/>
+                <button id="clearItems" onclick="clearItems();">Clear Tasks</button>
+            </label>          
+            <br>
+            <div id="tasks">
+
             </div>
-            <div class="timer">
-                <span id="minutes"></span>
-                <span>:</span>
-                <span id="seconds"></span>
-            </div>
-            <div class="buttons">
-                <button onclick="check();">Start</button>
-                <button onclick="stop();">Stop</button>
-            </div>
-        </section>
+        </div>
+        <br>
         <div id="credit">
-            <p>Made with <img src="images/heart.png" id="heart"> by <a href="https://www.github.com/natanschneider">Natan Schneider</a>.</p>
+            <p>Made with <img src="images/heart.png" id="heart" alt="heart"> by <a href="https://www.github.com/natanschneider" target="_blank" rel="noopener noreferrer">Natan Schneider</a>.</p>
         </div>
     </body>
+
+    <script>
+        const inputElement = document.getElementById('taskInput');
+        inputElement.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                const task = document.getElementById('taskInput').value;
+                document.getElementById('taskInput').value = "";
+                setItem(task);
+            }
+        });
+    </script>
 </html>
