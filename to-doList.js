@@ -17,14 +17,26 @@ function getItem(key){
 	
 	let h4 = document.createElement('h4');
 	h4.textContent = item;
+	h4.id = 'h4' + key;
 	
 	let deleteBtn = document.createElement('button');
+	let checkBtn = document.createElement('button');
+
 	deleteBtn.id = 'deleteTask';
+	checkBtn.id = 'checkTask';
+
 	deleteBtn.innerHTML = '<img src="images/cancel.png"  alt="" id="deleteImg"/>';
+	checkBtn.innerHTML = '<img src="images/check.png"  alt="" id="checkImg"/>';
+
 	deleteBtn.onclick = function(){
 		deleteItem(key);
 	};
 
+	checkBtn.onclick = function(){
+		checkItem(key);
+	};
+
+	h4.appendChild(checkBtn);
 	h4.appendChild(deleteBtn);
 	div.appendChild(h4);
 	document.getElementById('tasks').appendChild(div);
@@ -56,4 +68,11 @@ function clearItems(){
 	localStorage.clear();
 	let div = document.getElementById('tasks');
 	div.innerHTML = '';
+}
+
+function checkItem(key){
+	localStorage.removeItem(key);
+
+	let h4 = document.getElementById('h4' + key);
+	h4.style = 'text-decoration: line-through';
 }
