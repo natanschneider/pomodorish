@@ -21,7 +21,7 @@ span{
     font-size: 8rem;
 }
 
-button:not(#deleteTask){
+button:not(#deleteTask, #clearItems){
     width: 15%;
     height: 65px;
     background-color: #a94b47;
@@ -44,4 +44,10 @@ input{
 
 #deleteImg{
     height: 15px;
+}
+
+#clearItems{
+    width: 5%;
+    height: 40px;
+    background-color: #a94b47;
 }
