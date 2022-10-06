@@ -11,12 +11,11 @@ function getItem(key){
 	let item = localStorage.getItem(key);
 	
 	let div = document.createElement('div');
-	
 	div.class = 'taskItem';
 	div.id = key;
 	
 	let h4 = document.createElement('h4');
-	h4.textContent = item;
+	h4.textContent = item + '  ';
 	h4.id = 'h4' + key;
 	
 	let deleteBtn = document.createElement('button');
@@ -24,6 +23,9 @@ function getItem(key){
 
 	deleteBtn.id = 'deleteTask';
 	checkBtn.id = 'checkTask';
+
+	deleteBtn.class = 'dynamicButton';
+	checkBtn.class = 'dynamicButton';
 
 	deleteBtn.innerHTML = '<img src="images/cancel.png"  alt="" id="deleteImg"/>';
 	checkBtn.innerHTML = '<img src="images/check.png"  alt="" id="checkImg"/>';
