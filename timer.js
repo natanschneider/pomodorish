@@ -4,7 +4,8 @@ let myInterval;
 let Break = false;
 let onlyRunOnce = true;
 let stopBtn = false;
-let numBreak = 1;
+let numBreak = 0;
+let numWork = 0;
 const sound = '/sounds/notificationSound.wav';
 
 window.onload = async () =>{
@@ -30,10 +31,13 @@ function start(){
 	}else if(Break === false && stopBtn === false){
 		seconds = 60;
 		minutes = 24;
-	}else if(Break === true && numBreak === 4 && stopBtn === false){
+		numWork++;
+		document.getElementById('totalCycles').innerHTML = "Current work cycle: #" + numWork + ".";
+	}else if(Break === true && numBreak === 3 && stopBtn === false){
 		seconds = 60;
 		minutes = 14;
 		numBreak = 0;
+		document.getElementById('whichCycle').innerHTML = "Enjoy a long break, you deserve it";
 	}else if(Break === true && stopBtn === false){
 		seconds = 60;
 		minutes = 4;
@@ -55,13 +59,15 @@ function start(){
 				minutes = 25;
 				seconds = 0;
 				new Audio(sound).play();
-				new Notification('Time to get back to work!');			
+				new Notification('Time to get back to work!');
+				document.getElementById('whichCycle').innerHTML = "It's time to work!";			
 			}else if(Break === false){
 				Break = true;
 				minutes = 5;
 				seconds = 0;
 				new Audio(sound).play();
 				new Notification('You deserve a break now!');
+				document.getElementById('whichCycle').innerHTML = "Go ahead and take a break!";
 			}
 		}
 		document.getElementById('minutes').innerHTML = minutes;
