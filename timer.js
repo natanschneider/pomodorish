@@ -1,5 +1,5 @@
 let minutes = 25;
-let seconds = 0;
+let seconds = 00;
 let myInterval;
 let Break = false;
 let onlyRunOnce = true;
@@ -9,8 +9,8 @@ let numWork = 0;
 const sound = '/sounds/notificationSound.wav';
 
 window.onload = async () =>{
-	document.getElementById('minutes').innerHTML = minutes;
-	document.getElementById('seconds').innerHTML = seconds;
+	document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+	document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
 	
 	listItems();
 	await Notification.requestPermission();
@@ -70,8 +70,8 @@ function start(){
 				document.getElementById('whichCycle').innerHTML = "Go ahead and take a break!";
 			}
 		}
-		document.getElementById('minutes').innerHTML = minutes;
-		document.getElementById('seconds').innerHTML = seconds;
+		document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+		document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
 	}
 	myInterval = setInterval(timerFunction, 1000);
 }
