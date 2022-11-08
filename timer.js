@@ -1,5 +1,5 @@
 let minutes = 25;
-let seconds = 00;
+let seconds = 0o0;
 let myInterval;
 let Break = false;
 let onlyRunOnce = true;
