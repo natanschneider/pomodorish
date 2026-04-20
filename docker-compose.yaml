@@ -6,9 +6,9 @@ services:
     container_name: tanstack-app
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=3001
     ports:
-      - "3000:3001"
+      - "3001:3001"
     restart: unless-stopped
     networks:
       - tanstack-network
