@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tanstack-app
+    container_name: pomodorish-app
     environment:
       - NODE_ENV=production
       - PORT=3001
@@ -11,8 +11,8 @@ services:
       - "3001:3001"
     restart: unless-stopped
     networks:
-      - tanstack-network
+      - pomodorish-network
 
 networks:
-  tanstack-network:
+  pomodorish-network:
     driver: bridge
