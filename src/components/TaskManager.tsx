@@ -35,7 +35,6 @@ function uid() {
 
 function SortableTaskItem({
     task,
-    index,
     onToggle,
     onEdit,
     onDelete,
