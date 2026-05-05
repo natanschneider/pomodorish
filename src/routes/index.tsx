@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { PomodoroTimer } from '@/components/PomodoroTimer'
+import { TaskManager } from '@/components/TaskManager'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -16,6 +17,7 @@ function App() {
       </header>
 
       <PomodoroTimer />
+      <TaskManager />
     </main>
   )
 }
