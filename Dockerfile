@@ -24,5 +24,5 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package*.json ./
 COPY --from=build /app/pnpm*.json ./
 
-EXPOSE 3000
+EXPOSE 3001
 CMD ["npm", "run", "start"]
